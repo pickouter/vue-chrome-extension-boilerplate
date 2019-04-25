@@ -1,0 +1,21 @@
+{
+    "name": "Boilerplate For Building Vue.js Chrome Extensions",
+    "version": "0.1",
+    "description": "A Simple Boilerplate With Everything You Need To Start Building A Vue.js Chrome Extension",
+    "background" : {
+        "scripts" : ["js/background.js"],
+        "persistent" : true
+    },
+    "content_scripts" : [
+        {
+            "matches" : ["https://*.yourwebsite.com/*"],
+            "js" : ["js/contentScript.js"],
+            "css" : ["css/contentScript.css"]
+        }
+    ],
+    "browser_action" : {
+        "default_popup" : "popup.html"
+    },
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "manifest_version": 2
+}
